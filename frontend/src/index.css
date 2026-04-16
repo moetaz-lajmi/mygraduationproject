@@ -37,3 +37,23 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #00a67e;
 }
+
+/* Scroll reveal (used for landing page sections) */
+.bn-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.bn-reveal--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bn-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

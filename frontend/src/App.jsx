@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import EmailVerification from "./pages/EmailVerification";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-import Dashboard from "./pages/Dashboard";
+import Actualites from "./pages/Actualites";
 import Quotes from "./pages/Quotes";
 import Claims from "./pages/Claims";
 import MonSinistre from "./pages/MonSinistre";
@@ -38,7 +38,7 @@ function StaffRoute({ children }) {
   const { user, authLoading } = useContext(AuthContext);
   if (authLoading) return null;
   if (!user) return <Navigate to="/login" replace />;
-  return ["admin", "gestionnaire"].includes(user.role) ? children : <Navigate to="/dashboard" replace />;
+  return ["admin", "gestionnaire"].includes(user.role) ? children : <Navigate to="/actualites" replace />;
 }
 
 function AppRoutes() {
@@ -49,7 +49,7 @@ function AppRoutes() {
       ? "/admin/dashboard"
       : user?.role === "gestionnaire"
         ? "/gestionnaire/dashboard"
-        : "/dashboard";
+        : "/actualites";
 
   return (
     <Routes>
@@ -67,7 +67,7 @@ function AppRoutes() {
       <Route path="/reset-password" element={<ResetPassword />} />
 
       {/* Main Pages */}
-      <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+      <Route path="/actualites" element={<Actualites />} />
       <Route path="/quotes" element={<ProtectedRoute><Quotes /></ProtectedRoute>} />
       <Route path="/claims" element={<ProtectedRoute><Claims /></ProtectedRoute>} />
       <Route path="/mon-sinistre" element={<ProtectedRoute><MonSinistre /></ProtectedRoute>} />

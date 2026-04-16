@@ -16,7 +16,8 @@ import {
   Headphones,
   HelpCircle,
   Users,
-  User
+  User,
+  Newspaper
 } from "lucide-react";
 
 export default function Layout({ children }) {
@@ -53,7 +54,7 @@ export default function Layout({ children }) {
           { path: "/admin/dashboard", label: "Users", icon: Users }
         ]
       : [
-        { path: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+        { path: "/actualites", label: "Actualités", icon: Newspaper },
         { path: "/contracts", label: "Contracts", icon: FileText },
         { path: "/claims", label: "Claims", icon: AlertTriangle },
         { path: "/quotes", label: "Quotations", icon: Calculator },

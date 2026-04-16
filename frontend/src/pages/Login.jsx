@@ -43,7 +43,7 @@ export default function Login() {
           ? "/admin/dashboard"
           : result.user?.role === "gestionnaire"
             ? "/gestionnaire/dashboard"
-            : "/dashboard";
+            : "/actualites";
       navigate(targetPath, { replace: true });
     }
   };
